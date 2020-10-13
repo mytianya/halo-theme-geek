@@ -1,0 +1,402 @@
+p {
+    font-family: "Josefin Sans","Noto Sans SC",-apple-system,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #363636
+}
+
+h1 {
+    font-size: 25px;
+    font-style: normal;
+    line-height: 2;
+    font-weight: 900;
+    color: #363636;
+    margin-top: 2em;
+    margin-bottom: 2em
+}
+
+h2 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 2;
+    color: #363636;
+    margin-top: 2em;
+    margin-bottom: 2em
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 2;
+    font-style: normal;
+    color: #363636;
+    margin-top: 2em;
+    margin-bottom: 2em
+}
+
+h4 {
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 2;
+    font-style: normal;
+    color: #363636;
+    margin-top: 2em;
+    margin-bottom: 2em
+}
+
+h5,h6 {
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 2;
+    font-style: normal;
+    color: #363636;
+    margin-top: 2em;
+    margin-bottom: 2em
+}
+
+b,strong {
+    font-weight: 900
+}
+
+canvas,iframe,video {
+    display: block;
+    margin: auto;
+    max-width: 100%
+}
+
+img {
+    max-width: 100%
+}
+
+blockquote {
+    margin: 0;
+    padding: 0
+}
+
+.md-table {
+    overflow: scroll
+}
+
+table {
+    padding: 0;
+    table-layout: auto;
+    width: 100%
+}
+
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0
+}
+
+table tr:nth-child(2n),thead {
+    background-color: #f8f8f8
+}
+
+table tr th {
+    font-weight: 700;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+    white-space: nowrap
+}
+
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px
+}
+
+table tr td:first-child,table tr th:first-child {
+    margin-top: 0
+}
+
+table tr td:last-child,table tr th:last-child {
+    margin-bottom: 0
+}
+
+mark {
+    background: #fffd54;
+    font-weight: 500
+}
+
+td,th {
+    padding: 0
+}
+
+code,pre {
+    font-size: 85%;
+    font-family: 'Cascadia Code',Consolas,'Courier New',monospace;
+    font-weight: 400;
+    -webkit-font-smoothing: initial;
+    -moz-osx-font-smoothing: initial
+}
+
+code {
+    font-size: .9em;
+    color: #333;
+    font-family: 'Cascadia Code',Consolas,'Courier New',monospace;
+    padding: .3em .3em;
+    border-radius: 5px;
+    background: #f3f4f4
+}
+
+pre {
+    padding: .75rem 1rem;
+    line-height: 1.6;
+    overflow-wrap: normal;
+    border: 1px solid;
+    border-color: inherit
+}
+
+pre pre {
+    border: 0
+}
+
+pre code {
+    background: 0 0;
+    margin: 0;
+    padding: 0;
+    color: inherit
+}
+
+li .mathjax-block,li p {
+    margin: .1rem 0
+}
+
+input,textarea {
+    border: 1px solid;
+    color: inherit;
+    font-family: inherit;
+    padding: 4px 6px;
+    background: 0 0
+}
+
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {
+    color: inherit;
+    opacity: .5
+}
+
+input:focus,textarea:focus {
+    outline: 0
+}
+
+blockquote {
+    position: relative;
+    margin: 1em 0;
+    padding-left: 24px;
+    background-color: rgba(96,125,139,.05)
+}
+
+blockquote:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    bottom: 0;
+    background-color: currentColor;
+    content: "";
+    opacity: .2
+}
+
+ul>li>ul>li {
+    list-style-type: circle
+}
+
+ul>li>ul>li>ul>li {
+    list-style-type: square
+}
+
+ol,ul {
+    padding-left: 2em;
+    line-height: 2
+}
+
+ol>li {
+    list-style-type: decimal
+}
+
+ol>li>ol>li {
+    list-style-type: lower-alpha
+}
+
+ol>li>ol>li>ol>li {
+    list-style-type: lower-roman
+}
+
+#write {
+    font-size: 0.85rem
+}
+
+#write h1,#write h2,#write h3,#write h4,#write h5,#write h6 {
+    margin-left: -1.3rem;
+    margin-top: -60px!important;
+    padding-top: 60px!important;
+    outline: 0!important
+}
+
+#write h1:visited,#write h2:visited,#write h3:visited,#write h4:visited,#write h5:visited,#write h6:visited {
+    outline: 0!important
+}
+
+#write h1,#write h2,#write h3,#write h4,#write h5,#write h6,#write p,#write pre {
+    width: auto
+}
+
+#write h1::before,#write h2::before,#write h3::before,#write h4::before,#write h5::before,#write h6::before {
+    position: relative;
+    top: .1rem;
+    right: .5rem;
+    bottom: 0;
+    color: #b4b4b4;
+    font-size: .8rem;
+    font-weight: 700;
+    font-variant: small-caps;
+    border: 0;
+    border-radius: 0;
+    left: auto;
+    float: none;
+    padding: 0;
+    vertical-align: baseline;
+    line-height: 2
+}
+
+#write h1 {
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 2;
+    margin-top: 14px;
+    margin-bottom: 14px
+}
+
+#write h1::before {
+    content: 'H1';
+    bottom: .45rem
+}
+
+#write h2 {
+    font-size: 20px;
+    font-weight: 900;
+    font-style: normal;
+    line-height: 2;
+    margin-top: 14px;
+    margin-bottom: 14px
+}
+
+#write h2::before {
+    content: 'H2';
+    bottom: .2rem
+}
+
+#write h3 {
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 2;
+    font-style: normal;
+    margin-top: 14px;
+    margin-bottom: 14px
+}
+
+#write h3::before {
+    content: 'H3';
+    bottom: .18rem
+}
+
+#write h4 {
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 2;
+    font-style: normal;
+    margin-top: 14px;
+    margin-bottom: 14px
+}
+
+#write h4::before {
+    content: 'H4';
+    bottom: .15rem
+}
+
+#write h5,#write h6 {
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 2;
+    font-style: normal;
+    margin-top: 14px;
+    margin-bottom: 14px
+}
+
+#write h5::before,#write h6::before {
+    bottom: .1rem
+}
+
+#write h5::before {
+    content: 'H5'
+}
+
+#write h6::before {
+    content: 'H6'
+}
+
+#write strong {
+    font-weight: 900;
+    padding: 0 1px
+}
+
+#write ol>li,#write ul>li {
+    list-style: disc;
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+    color: var(--base-hl-color)
+}
+
+#write ol>li {
+    list-style: decimal!important
+}
+
+#write ol>li>*,#write ul>li>* {
+    color: #333!important
+}
+
+#write ol>li>:not(ol):not(ul),#write ul>li>:not(ol):not(ul) {
+    padding-left: .25rem
+}
+
+#write ul>li>ul>li {
+    list-style-type: circle
+}
+
+#write ul>li>ul>li>ul>li {
+    list-style-type: square
+}
+
+#write p {
+    margin: 1rem auto;
+    line-height: 2
+}
+
+#write ol>li>p,#write ul>li>p {
+    margin: 0 auto
+}
+
+#write a {
+    color: var(--base-color);
+    text-decoration: underline;
+    -webkit-text-decoration-style: dotted;
+    text-decoration-style: dotted;
+    cursor: pointer;
+    word-break: break-word
+}
+
+#write pre {
+    padding: 10px;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777;
+    margin: 1em auto
+}

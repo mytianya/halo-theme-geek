@@ -1,0 +1,11 @@
+id: codehome_geek
+name: geek
+author:
+  name: codehome
+  website: https://www.codehome.vip
+description: a geek theme for halo
+logo:
+website: https://www.codehome.vip
+repo: https://github.com/mytianya/halo-theme-geek
+version: 1.0
+require: 1.4.0

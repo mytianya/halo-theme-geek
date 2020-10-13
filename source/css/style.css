@@ -1,0 +1,136 @@
+
+	* {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        text-rendering: geometricPrecision;
+        font-family: Menlo, "Meslo LG", "Helvetica Neue", Helvetica, Arial, sans-serif, "微软雅黑", monospace;
+        /* 			font: 500 14px/1.8 'Hiragino Sans GB', sans-serif;
+*/
+        background: url(../images/bg.jpg);
+    }
+
+    .wrapper {
+        display: flex;
+    }
+
+    .content {
+        background: #FDFDFD;
+        background: -webkit-gradient(linear, 0% 0%, 0% 80%, from(#FFF), to(#F2F2F2));
+        background: -moz-linear-gradient(#FFF, #F2F2F2 80%);
+        color: #333;
+        width: 100%;
+        min-height: calc(100vh - 42px);
+        padding: 20px;
+        border: 1px solid #dedede;
+        -webkit-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        -ms-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.7);
+        margin: 0 auto;
+        max-width: 1000px;
+        position: relative;
+    }
+    @media only screen and (max-width:1000px){
+        .content{
+            max-width: 740px;
+        }
+    }
+
+
+    .content>.fixed-nav {
+        position: fixed;
+        font-weight: bold;
+        font-size: 12px;
+        right: 0px;
+        top: 15%;
+        padding: 0.3125rem;
+        color: white;
+    }
+
+    .content:hover {
+        border-bottom-right-radius: 140px 30px;
+        box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.7);
+    }
+
+    .wrapper .title {
+        text-align: center;
+        /* 	border-bottom: 2px solid rgba(16, 22, 26, 0.3); */
+        text-decoration: underline;
+        padding-bottom: 20px;
+        word-spacing: 5px;
+    }
+
+    .content>.nav-list {
+        display: flex;
+        align-content: center;
+    }
+
+    .nav-list>li {
+        list-style-type: none;
+        padding: 5px;
+        font-size: 1em;
+        font-weight: bold;
+        box-shadow: 2px 2px 14px rgb(0 0 0);
+    }
+    .nav-list a{
+        text-decoration: none;
+        color:white;
+    }
+    .content .posts-title {
+        display: block;
+        border-bottom: 2px solid #333;
+        padding: 10px 0px 0px 0px;
+    }
+
+    .post-nav {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.7em;
+        margin: 20px 0px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    /*正常的未被访问过的链接*/
+    a:link {
+        text-decoration: none;
+    }
+
+    /*已经访问过的链接*/
+    a:visited {
+        text-decoration: none;
+    }
+
+    /*鼠标划过(停留)的链接*/
+    a:hover {
+        text-decoration: none;
+    }
+
+    /* 正在点击的链接，鼠标在元素上按下还没有松开*/
+    a:active {
+        text-decoration: none;
+    }
+
+    /* 获得焦点的时候 鼠标松开时显示的颜色*/
+    a:focus {
+        text-decoration: none;
+    }
+
+    .post-nav>.post-head {
+        border-bottom: 1px solid #333;
+        font-weight: 550;
+    }
+
+    .post-nav>.post-time {
+        font-weight: bold;
+    }
+
+    .post-nav a {
+        text-decoration: none;
+    }
