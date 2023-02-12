@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{layout :: html(head = null,content = ~{::content})}">
+<th:block th:fragment="content">
+  <div id="main">
+    <div id="content">
+      <div>
+        <article role="article">
+          <header>
+            <h1 class="entry-title">Blog Archive</h1>
+          </header>
+          <th:block th:each="archive : ${archives.items}">
+            <div id="blog-archives">
+              <h2 th:text="${archive.year}"></h2>
+
+              <th:block th:each="month : ${archive.months}">
+                <article th:each="post : ${month.posts}">
+                  <h1> <a th:href="@{${post.status.permalink}}" th:title="${post.spec.title}"
+                      th:text="${post.spec.title}"></a></h1>
+                  <time datetime="2014-10-31T15:00:00+08:00" pubdate><span class='month'>Oct</span> <span
+                      class='day'>31</span> <span class='year'>2014</span></time>
+
+                </article>
+              </th:block>
+            </div>
+
+          </th:block>
+          <div class="pagination">
+            <a th:if="${archives.hasPrevious()}" class="prev" th:href="@{${archives.prevUrl}}">上一页</a>
+            <a th:if="${archives.hasNext()}" class="next" th:href="@{${archives.nextUrl}}">下一页</a>
+          </div>
+        </article>
+      </div>
+      <th:block th:if="${sidebar != null}">
+        <th:block th:replace="${sidebar}" />
+      </th:block>
+      <th:block th:if="${sidebar == null}">
+        <th:block th:replace="~{sidebar :: sidebar(prepend = null)}" />
+      </th:block>
+    </div>
+  </div>
+</th:block>
+
+
+</html>

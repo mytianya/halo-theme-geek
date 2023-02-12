@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{layout :: html(head = null,content = ~{::content})}">
+<th:block th:fragment="content">
+
+  <div id="main">
+    <div id="content">
+      <div class="blog-index" th:if="${posts.total gt 0}" th:with="postItems=${posts.items}">
+        <article th:each="post : ${postItems}">
+          <header>
+            <h1 class="entry-title"><a th:href="@{${post.status.permalink}}" th:text="${post.spec.title}"></a></h1>
+            <p class="meta">
+              <time th:datetime="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}" pubdate data-updated="true" th:text="|发布于 ${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}|"></time>
+              | <a th:href="@{${post.status.permalink}}"
+                th:data-disqus-identifier="@{${post.status.permalink}}">Comments</a>
+            </p>
+          </header>
+          <div class="entry-content" th:text="${post.status.excerpt}">
+          </div>
+          <footer>
+            <a rel="full-article" th:href="@{${post.status.permalink}}">Read on &rarr;</a>
+          </footer>
+        </article>
+        <div class="pagination">
+          <a  th:if="${posts.hasNext()}" class="prev" th:href="@{${posts.nextUrl}}">&larr; Older</a>
+          <a href="/archives">Blog Archives</a>
+          <a  th:if="${posts.hasPrevious()}" class="next" th:href="@{${posts.prevUrl}}">Newer &rarr;</a>
+        </div>
+      </div>
+      <th:block th:if="${sidebar != null}">
+        <th:block th:replace="${sidebar}" />
+      </th:block>
+      <th:block th:if="${sidebar == null}">
+        <th:block th:replace="~{sidebar :: sidebar(prepend = null)}" />
+      </th:block>
+    </div>
+  </div>
+</th:block>
+
+</html>

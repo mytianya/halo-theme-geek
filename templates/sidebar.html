@@ -1,0 +1,11 @@
+<aside th:fragment="sidebar (prepend)" class="sidebar">
+        <section>
+          <h1>最近文章</h1>
+          <ul id="recent_posts" th:with="posts = ${postFinder.list(1,10)}">
+            <li class="post" th:each="post : ${posts}">
+              <a th:href="@{${post.status.permalink}}" th:text="${post.spec.title}" th:title="${post.spec.title}"></a>
+            </li>
+          </ul>
+        </section>
+  </aside>
+  

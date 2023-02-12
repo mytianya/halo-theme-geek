@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{layout :: html(head = null,content = ~{::content})}">
+<th:block th:fragment="content">
+  <div id="main">
+    <div id="content">
+      <div>
+        <article class="hentry" role="article">
+          <header>
+            <h1 class="entry-title" h:text="${post.spec.title}"></h1>
+            <p class="meta">
+              <time th:datetime="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}" pubdate data-updated="true"
+                th:text="|发布于 ${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}|"></time>
+              | <a href="#comment"
+                th:data-disqus-identifier="@{${post.status.permalink}}">Comments</a>
+            </p>
+          </header>
+          <div class="entry-content" th:utext="${post.content.content}">
+          </div>
+          <footer>
+            <p class="meta">
+              <span class="byline author vcard">Posted by <span class="fn"
+                  th:text="${post.owner.displayName}"></span></span>
+              <time th:datetime="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}" pubdate data-updated="true"
+                th:text="|发布于 ${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}|"></time>
+            </p>
+            <p class="meta"  th:with="postCursor = ${postFinder.cursor(post.metadata.name)}">
+              <a class="basic-alignment left" th:if="${postCursor.hasPrevious()}"
+                th:href="@{${postCursor.previous.status.permalink}}" th:title="${postCursor.previous.spec.title}" th:text="${postCursor.next.spec.title}"></a>
+              <a class="basic-alignment right" th:if="${postCursor.hasNext()}"
+                th:href="@{${postCursor.next.status.permalink}}" th:title="${postCursor.next.spec.title}" th:text="${postCursor.next.spec.title}"></a>
+            </p>
+          </footer>
+        </article>
+        <section>
+          <h1>Comments</h1>
+          <div th:if="${pluginFinder.available('PluginCommentWidget')}">
+            <h2 class="mb-2 text-base font-medium text-gray-900 dark:text-slate-50">评论</h2>
+            <halo:comment group="content.halo.run" kind="Post" th:attr="name=${post.metadata.name}"
+              colorScheme="window.main.currentColorScheme" />
+          </div>
+        </section>
+      </div>
+      <th:block th:if="${sidebar != null}">
+        <th:block th:replace="${sidebar}" />
+      </th:block>
+      <th:block th:if="${sidebar == null}">
+        <th:block th:replace="~{sidebar :: sidebar(prepend = null)}" />
+      </th:block>
+    </div>
+  </div>
+</th:block>
+
+</html>
