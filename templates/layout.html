@@ -8,12 +8,9 @@
   <title th:text="${site.title}"></title>
   <link rel="stylesheet" th:href="@{/assets/css/style.css}" />
   <script th:src="@{/assets/js/modernizr-2.0.js}"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript th:src="{@{/assets/js//jquery.min.js}"'))</script>
+  <script th:src="@{/assets/js/jquery.min.js}"></script>
   <script th:src="@{/assets/js/main.js}"></script>
-  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet"
-    type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet"
+  <link th:href="@{/assets/css/font.css}" rel="stylesheet"
     type="text/css">
   <th:block th:if="${head != null}">
     <th:block th:replace="${head}" />
