@@ -2097,3 +2097,80 @@ body>footer a:hover {
 body>footer p:last-child {
   margin-bottom: 0
 }
+ul.tag-cloud{
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  line-height: 2.5rem;
+}
+ul.tag-cloud a {
+  display: block;
+  font-size: 1.5rem;
+  padding: 0.125rem 0.25rem;
+  text-decoration: none;
+  position: relative;
+}
+ul.tag-cloud a[data-weight="1"] { --size: 1; }
+ul.tag-cloud a[data-weight="2"] { --size: 2; }
+ul.tag-cloud a[data-weight="3"] { --size: 3; }
+ul.tag-cloud a[data-weight="4"] { --size: 4; }
+ul.tag-cloud a[data-weight="5"] { --size: 5; }
+ul.tag-cloud a[data-weight="6"] { --size: 6; }
+ul.tag-cloud a[data-weight="7"] { --size: 7; }
+ul.tag-cloud a[data-weight="8"] { --size: 8; }
+ul.tag-cloud a[data-weight="9"] { --size: 9; }
+ul.tag-cloud a[data-weight="10"] { --size: 10; }
+ul.tag-cloud a[data-weight="11"] { --size: 11; }
+ul.tag-cloud a[data-weight="12"] { --size: 12; }
+ul.tag-cloud a[data-weight="13"] { --size: 13; }
+ul.tag-cloud a[data-weight="14"] { --size: 14; }
+ul.tag-cloud a[data-weight="15"] { --size: 15; }
+ul.tag-cloud a[data-weight="16"] { --size: 16; }
+ul.tag-cloud a[data-weight="17"] { --size: 17; }
+ul.tag-cloud a[data-weight="18"] { --size: 18; }
+ul.tag-cloud a[data-weight="19"] { --size: 19; }
+ul.tag-cloud a[data-weight="20"] { --size: 20; }
+ul.tag-cloud a[data-weight="21"] { --size: 21; }
+ul.tag-cloud a[data-weight="22"] { --size: 22; }
+ul.tag-cloud a[data-weight="23"] { --size: 23; }
+ul.tag-cloud a[data-weight="24"] { --size: 24; }
+ul.tag-cloud a[data-weight="25"] { --size: 25; }
+ul.tag-cloud a {
+  --size: 1;
+  font-size: calc(var(--size) * 0.25rem + 0.5rem);
+  /* ... */
+}
+ul.tag-cloud  a::after {
+  content: " (" attr(data-weight) ")";
+  font-size: 1rem;
+}
+ul.tag-cloud li:nth-child(2n+1) a { --color: #181; }
+ul.tag-cloud li:nth-child(2n) a { --color: #f233f8; }
+ul.tag-cloud li:nth-child(3n+1) a { --color: #33a; }
+ul.tag-cloud li:nth-child(4n+1) a { --color: #c38; }
+ul.tag-cloud li:nth-child(5n+1) a { --color: #33a; }
+ul.tag-cloud li:nth-child(6n+1) a { --color: #c38; }
+
+ul.tag-cloud a:focus {
+  outline: 1px dashed;
+}
+ul.tag-cloud a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 100%;
+  background: var(--color);
+  transform: translate(-50%, 0);
+  opacity: 0.15;
+  transition: width 0.25s;
+}
+
+ul.tag-cloud a:focus::before,
+ul.tag-cloud a:hover::before {
+  width: 100%;
+}

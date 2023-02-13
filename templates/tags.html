@@ -4,10 +4,10 @@
   th:replace="~{layout :: html(head = null,content = ~{::content})}"
 >
   <th:block th:fragment="content">
-    <h1>标签</h1>
-    <ul>
+    <ul class="tag-cloud">
       <li th:each="tag : ${tags}">
         <a
+          th:data-weight="@{${tag.status.postCount}}"
           th:href="@{${tag.status.permalink}}"
           th:text="${tag.spec.displayName}"
         ></a>
