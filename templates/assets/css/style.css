@@ -359,7 +359,19 @@ body {
   position: relative;
   margin: 0 auto
 }
-
+.entry-content > table th{
+  background-color: rgba(0,0,0,.1);
+  padding:8px 16px;
+  border:1px solid #dfe2e5;
+  line-height: 1.5;
+  font-size:90%;
+}
+.entry-content > table td {
+  padding: 8px 16px;
+  border: 1px solid #dfe2e5;
+  line-height: 1.5;
+  font-size: 90%;
+}
 body>header,body>nav,body>footer,body #content>article,body #content>div>article,body #content>div>section {
   padding-left: 18px;
   padding-right: 18px
