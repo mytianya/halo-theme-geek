@@ -25,7 +25,7 @@
             </p>
             <p class="meta"  th:with="postCursor = ${postFinder.cursor(post.metadata.name)}">
               <a class="basic-alignment left" th:if="${postCursor.hasPrevious()}"
-                th:href="@{${postCursor.previous.status.permalink}}" th:title="${postCursor.previous.spec.title}" th:text="${postCursor.previous.sepc.title}"></a>
+                th:href="@{${postCursor.previous.status.permalink}}" th:title="${postCursor.previous.spec.title}" th:text="${postCursor.previous.spec.title}"></a>
               <a class="basic-alignment right" th:if="${postCursor.hasNext()}"
                 th:href="@{${postCursor.next.status.permalink}}" th:title="${postCursor.next.spec.title}" th:text="${postCursor.next.spec.title}"></a>
             </p>
