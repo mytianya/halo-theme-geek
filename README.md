@@ -6,7 +6,8 @@ Halo 2.0 Geek主题，本主题参考Octopress，关注文章内容，极客风�
 DEMO：[https://www.codehome.vip](https://www.codehome.vip)
 截图：
 ![](./screenshot1.png)
-![](./screenshot2.png)
+
+![](./screenhost2.png)
 ## ⚡ 功能
 <details>
 <summary>点击查看完整功能列表</summary>
