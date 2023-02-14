@@ -5,7 +5,8 @@ Halo 2.0 Geek主题，本主题参考Octopress，关注文章内容，极客风�
 ## 😃 预览
 DEMO：[https://www.codehome.vip](https://www.codehome.vip)
 截图：
-![](./screenshot.png)
+![](./screenshot1.png)
+![](./screenshot2.png)
 ## ⚡ 功能
 <details>
 <summary>点击查看完整功能列表</summary>
@@ -18,7 +19,8 @@ DEMO：[https://www.codehome.vip](https://www.codehome.vip)
 - [x] Rss默认显示
 - [x] 代码高亮
 - [x] 移动客户端适配
-### 本地安装
+  
+## 本地安装
 1. 点击链接[下载](https://github.com/mytianya/halo-theme-geek/releases)
 2. 进入 Halo 后台 -> 外观 -> 主题
 3. 点击右上角 “切换主题”， 在弹出的窗口中选择 “安装主题”
