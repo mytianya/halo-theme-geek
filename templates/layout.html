@@ -13,8 +13,7 @@
   <script th:src="@{/assets/js/jquery.min.js}"></script>
   <script th:src="@{/assets/js/main.js}"></script>
   <script th:src="@{/assets/js/jqcloud.min.js}"></script>
-  <link th:href="@{/assets/css/font.css}" rel="stylesheet"
-    type="text/css">
+  <link th:href="@{/assets/css/font.css}" rel="stylesheet" type="text/css">
   <th:block th:if="${head != null}">
     <th:block th:replace="${head}" />
   </th:block>
@@ -26,27 +25,23 @@
       <h1><a href="/" th:text="${site.title}"></a></h1>
     </hgroup>
   </header>
-  <nav role="navigation">
+  <nav role="navigation" th:with="menu = ${menuFinder.getPrimary()}">
     <ul class="subscription" data-subscription="rss">
       <li><a href="/rss.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
     </ul>
     <ul class="subscription" data-subscription="rss">
-
-    <li th:if="${pluginFinder.available('PluginSearchWidget')}">
-      <a
-        href="javascript:SearchWidget.open()"
-        title="搜索"
-        class="text-gray-600 hover:text-blue-600 dark:text-slate-100"
-      >
-      <i class="fa fa-search-plus" aria-hidden="true"></i>
-      </a>
-    </li>
+      <li th:if="${pluginFinder.available('PluginSearchWidget')}">
+        <a href="javascript:SearchWidget.open()" title="搜索"
+          class="text-gray-600 hover:text-blue-600 dark:text-slate-100">
+          <i class="fa fa-search-plus" aria-hidden="true"></i>
+        </a>
+      </li>
     </ul>
-    <ul class="main-navigation">
-      <li><a href="/">Blog</a></li>
-      <li><a href="/archives">Archives</a></li>
-      <li><a href="/about">About me</a></li>
-    </ul>
+     <ul class="main-navigation"  th:if="${menu != null} and ${not #lists.isEmpty(menu.menuItems)}" >
+      <li th:each="menuItem : ${menu.menuItems}">
+        <a th:href="${menuItem.status.href}" th:text="${menuItem.status.displayName}"></a>
+      </li>
+    </ul> 
   </nav>
   <section>
     <th:block th:replace="${content}" />
