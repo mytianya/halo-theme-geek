@@ -4,10 +4,43 @@ metadata:
   name: theme-geek-setting
 spec:
   forms:
-    - group: style
-      label: 样式
+    - group: beian
+      label: 备案设置
       formSchema:
-        - $formkit: color
-          name: background_color
-          label: 背景颜色
-          value: "#f2f2f2"
+        - $formkit: text
+          name: icp_text
+          label: ICP备案号
+        - $formkit: text
+          name: icp_link
+          label: ICP备案跳转链接
+          value: https://beian.miit.gov.cn/
+    - group: social
+      label: 社交媒体
+      formSchema:
+        - $formkit: repeater
+          name: socials
+          label: 社交媒体
+          value: []    
+          children:
+            - $formkit: text
+              name: name
+              label: 名称
+              value: ""
+            - $formkit: text
+              name: url
+              label: 地址
+              value: ""
+            - $formkit: select
+              name: icon
+              label: 图标
+              options:
+                - label: 电子邮箱
+                  value: fa fa-envelope
+                - label: 微信
+                  value: fa fa-weixin
+                - label: 腾讯 QQ
+                  value: fa fa-qq
+                - label: 新浪微博
+                  value: fa fa-weibo
+                - label: GitHub
+                  value: fa fa-github

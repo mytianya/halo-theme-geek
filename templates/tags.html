@@ -2,15 +2,6 @@
 <html xmlns:th="https://www.thymeleaf.org" th:replace="~{layout :: html(head = null,content = ~{::content})}">
 <th:block th:fragment="content">
   <div id="tag-cloud" style="min-height: 200px;"></div>
-  <!-- <ul class="tag-cloud">
-      <li th:each="tag : ${tags}">
-        <a
-          th:data-weight="@{${tag.status.postCount}}"
-          th:href="@{${tag.status.permalink}}"
-          th:text="${tag.spec.displayName}"
-        ></a>
-      </li>
-    </ul> -->
   <script type="text/javascript" th:inline="javascript">
     var tags = [[${ tags }]];
     var words = []

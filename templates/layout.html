@@ -19,7 +19,7 @@
   </th:block>
 </head>
 
-<body th:style="'background-color: '+${theme.config.style.background_color ?: '#f2f2f2'}">
+<body>
   <header role="banner">
     <hgroup>
       <h1><a href="/" th:text="${site.title}"></a></h1>
@@ -37,20 +37,25 @@
         </a>
       </li>
     </ul>
-     <ul class="main-navigation"  th:if="${menu != null} and ${not #lists.isEmpty(menu.menuItems)}" >
+    <ul class="main-navigation" th:if="${menu != null} and ${not #lists.isEmpty(menu.menuItems)}">
       <li th:each="menuItem : ${menu.menuItems}">
         <a th:href="${menuItem.status.href}" th:text="${menuItem.status.displayName}"></a>
       </li>
-    </ul> 
+    </ul>
   </nav>
   <section>
     <th:block th:replace="${content}" />
   </section>
   <footer role="contentinfo">
-    <p>
-      Copyright &copy; 2023 编程之家
-      <span class="credit"><a href="https://beian.miit.gov.cn/"> 皖ICP备20005605号-1</a></span>
+    <p th:with="social_medias = ${theme.config.social.socials}">
+      <a th:each="social_media : ${social_medias}" th:href="${social_media.url}" th:title="${social_media.name}">
+        <i th:classappend="${social_media.icon}">&nbsp;&nbsp;</i>
+      </a>
+      Copyright &copy; <span th:text="${site.title}"></span>
+      <span class="credit"><a th:href="${theme.config.beian.icp_link}"
+          th:text="${theme.config.beian.icp_text}"></a></span>
     </p>
+
   </footer>
 </body>
 

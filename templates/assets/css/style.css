@@ -10,11 +10,12 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 html {
   line-height: 1
 }
-
+body{
+  background-color: #f2f2f2;
+}
 ol,ul {
   list-style: none
 }
-
 table {
   border-collapse: collapse;
   border-spacing: 0
@@ -1914,6 +1915,7 @@ aside.sidebar li p:last-child {
 
 aside.sidebar a {
   color: inherit;
+  text-decoration: none;
   -webkit-transition: color 0.5s;
   -moz-transition: color 0.5s;
   -o-transition: color 0.5s;
@@ -2059,7 +2061,7 @@ aside.sidebar:hover a:hover {
 }
 
 body>footer {
-  font-size: .8em;
+  font-size: .9em;
   color: #888;
   text-shadow: #d9d9d9 0 1px;
   background-color: #ccc;
@@ -2081,7 +2083,9 @@ body>footer {
   border-bottom-right-radius: 0.4em;
   z-index: 1
 }
-
+body>footer>p{
+  text-align: center;
+}
 body>footer a {
   color: #6b6b6b
 }
