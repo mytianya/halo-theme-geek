@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html
-  xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{layout :: html(head = null,content = ~{::content})}"
->
-  <th:block th:fragment="content">
-    <ul class="tag-cloud">
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{layout :: html(head = null,content = ~{::content})}">
+<th:block th:fragment="content">
+  <div id="tag-cloud" style="min-height: 200px;"></div>
+  <!-- <ul class="tag-cloud">
       <li th:each="tag : ${tags}">
         <a
           th:data-weight="@{${tag.status.postCount}}"
@@ -12,6 +10,22 @@
           th:text="${tag.spec.displayName}"
         ></a>
       </li>
-    </ul>
-  </th:block>
+    </ul> -->
+  <script type="text/javascript" th:inline="javascript">
+    var tags = [[${ tags }]];
+    var words = []
+    for (var i = 0; i < tags.length; i++) {
+      words.push({
+        text: tags[i].spec.displayName,
+        weight: tags[i].status.postCount,
+        link: tags[i].status.permalink
+      })
+    }
+    $('#tag-cloud').jQCloud(words, {
+      colors: ["#800026", "#bd0026", "#e31a1c", "#fc4e2a", "#fd8d3c", "#feb24c", "#fed976", "#cdae29", "#adad0d","#215db0","#1c6e42"],
+      autoResize: true,
+    });
+  </script>
+</th:block>
+
 </html>

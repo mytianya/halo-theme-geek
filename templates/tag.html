@@ -4,16 +4,36 @@
   th:replace="~{layout :: html(head = null,content = ~{::content})}"
 >
   <th:block th:fragment="content">
-    <h1 th:text="${tag.spec.displayName}"></h1>
-    <ul>
-      <li th:each="post : ${posts.items}">
-        <a
-          th:href="@{${post.status.permalink}}"
-          th:text="${post.spec.title}"
-        ></a>
-      </li>
-    </ul>
-    <a th:if="${posts.hasPrevious()}" th:href="@{${posts.prevUrl}}">上一页</a>
-    <a th:if="${posts.hasNext()}" th:href="@{${posts.nextUrl}}">下一页</a>
+    <div id="main">
+      <div id="content">
+        <div>
+          <article role="article">
+            <header>
+              <h1 class="entry-title" th:text="${tag.spec.displayName}"></h1>
+            </header>
+            <th:block th:each="post : ${posts.items}">
+              <div id="blog-archives">  
+                  <article>
+                    <h1> <a th:href="@{${post.status.permalink}}" th:title="${post.spec.title}"
+                        th:text="${post.spec.title}"></a></h1>
+                        <time th:datetime="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}" pubdate data-updated="true" th:text="${#dates.format(post.spec.publishTime,'yy-MM-dd')}|"></time>
+                  </article>
+              </div>
+  
+            </th:block>
+            <div class="pagination">
+              <a th:if="${posts.hasPrevious()}" class="prev" th:href="@{${posts.prevUrl}}">上一页</a>
+              <a th:if="${posts.hasNext()}" class="next" th:href="@{${posts.nextUrl}}">下一页</a>
+            </div>
+          </article>
+        </div>
+        <th:block th:if="${sidebar != null}">
+          <th:block th:replace="${sidebar}" />
+        </th:block>
+        <th:block th:if="${sidebar == null}">
+          <th:block th:replace="~{sidebar :: sidebar(prepend = null)}" />
+        </th:block>
+      </div>
+    </div>
   </th:block>
 </html>
